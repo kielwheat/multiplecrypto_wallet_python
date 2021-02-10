@@ -1,0 +1,42 @@
+MyWallet
+phrase -  deposit eternal bamboo resist pen unique depend life metal ugly index ask
+
+./geth --datadir node1 account new
+
+Genesis block creation:
+node password 1995
+
+node1:
+Public address of the key- already existing:   0xaDbCa1E3EE1e495Eda65AbAE35737E27537FA8E3
+
+
+node2:
+Public address of the key- already existing:   0xfb6E15a664438AFF1820BbA82a73cbDC4Cc6c8B6
+
+node3:
+Public address of key from wallet.py: 0x19108b692621422190E19AEc9Ef72d1fE5b7182E
+
+network name:
+wallettest
+
+network ID: 
+2003
+
+blocktime:
+1 second
+
+initialize network
+./geth --datadir node1 init wallettest.json
+./geth --datadir node2 init wallettest.json
+
+Mining block instructions:
+
+enode address:  enode://c1a0caffc09eb252969e9808b87381ce70171ce23f7ca84662f7c0b042e54f6deaba221a23911043ea46b3e1fad1ed546f7d5839a362846193e59f93a66600f3@127.0.0.1:30303
+
+Copy and paste these into separate git bash terminal windows to start the private PoA network mining.  By default, node1 uses port 30303 so node2 needs to be explicitly directed to port 30304 (and so on for any addtional nodes):
+
+    ./geth --datadir node1 --unlock "aDbCa1E3EE1e495Eda65AbAE35737E27537FA8E3" --mine --rpc --allow-insecure-unlock
+    ./geth --datadir node2 --unlock "fb6E15a664438AFF1820BbA82a73cbDC4Cc6c8B6" --mine --port 30305 --bootnodes "enode://b567be52115648321275a1529b07468a5544cc751455f38be37b2931758773a94f1fb8f7f3af9a7f500008d53e1d996cc4c641903782464a3885b9981c5d7e22@127.0.0.1:30303" --ipcdisable --allow-insecure-unlock
+    ./geth --datadir node3 --unlock "19108b692621422190E19AEc9Ef72d1fE5b7182E" --mine --port 30304 --bootnodes "enode://b567be52115648321275a1529b07468a5544cc751455f38be37b2931758773a94f1fb8f7f3af9a7f500008d53e1d996cc4c641903782464a3885b9981c5d7e22@127.0.0.1:30303" --ipcdisable --allow-insecure-unlock
+
+
