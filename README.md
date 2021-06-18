@@ -1,6 +1,6 @@
-# wallet_wk19
+# Multi-Coin Wallet
 
-This repo contains a muli-coin wallet python program that can create security keys to create multiple coin wallets.  It can prepare and send transactions while maintaining private key security by using only public addresses.  By using either the BTC-test or ETH network, users can fund and create test transactions between accounts.  
+This repo contains a multi-coin wallet python program that can create security keys to create multiple coin wallets.  It can prepare and send transactions while maintaining private key security by using only public addresses.  By using either the BTC-test or ETH network, users can fund and create test transactions between accounts.  
 
 Included in the repo specific to the wallet building are:
 wallet.py - global variables can be chosen here for coin choices and number of keys
